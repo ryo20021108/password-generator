@@ -1,7 +1,7 @@
 function generatePassword(options){
 
-  // 檢查options
-  const length = parseInt(options['password-length'])|| '8'
+  // length & exclude-character
+  const length = parseInt(options['password-length'])
   const excludeCharacters = options['exclude-characters'] 
 
   const lowercase = 'abcdefghijklmnopqrstuvwxyz'
@@ -45,6 +45,7 @@ function generatePassword(options){
     })
   }
 
+  //collection中至少要有一個字元(至少有一個選項打勾)
   if (collection.length === 0) {
     return 'You must select at least one character set.';
   }
@@ -53,10 +54,8 @@ function generatePassword(options){
   for(let i = 0; i < length; i++){
     password += collection[Math.floor(Math.random() * collection.length)]
   }
-
-
-  console.log(`collection : ${collection}`);
-  console.log(password);
+  // console.log(`collection : ${collection}`);
+  // console.log(password);
   return password
 
 }

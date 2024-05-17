@@ -31,40 +31,40 @@
       <label class="col-sm-4 form-label" for="password-length">Password Length</label>
       <div class="col-sm-8">
         <input type="number" min="4" max="16" name="password-length" class="form-control m-0" id="password-length"
-          placeholder="4...." required>
-        <small class="m-0 p-0">Length is available between 4~16 words</small>
+          placeholder="4...." value="{{options.password-length}}" required>
+        <small class="m-0 p-0" style="color: gray;">Length is available between 4~16 words</small>
       </div>
     </div>
 {{!-- Lowercase --}}
     <div class="d-flex mb-3">
       <label class="col-sm-4" for="lowercase">Include Lowercase Characters</label>
-      <input type="checkbox" class="m-0 p-0" name="lowercase">
-      <p class="m-0 ps-1">(e.g. abcdefg)</p>
+      <input type="checkbox" class="m-0 p-0" name="lowercase" {{#if options.lowercase}}checked{{/if}}>
+      <p class="m-0 ps-1">(e.g. abcdefg...)</p>
     </div>
 {{!-- Uppercase --}}
     <div class="d-flex mb-3">
       <label class="col-sm-4" for="uppercase">Include Uppercase Characters</label>
-      <input type="checkbox" class="m-0 p-0" name="uppercase">
-      <p class="m-0 ps-1">(e.g. ABCDEFG)</p>
+      <input type="checkbox" class="m-0 p-0" name="uppercase" {{#if options.uppercase}}checked{{/if}}>
+      <p class="m-0 ps-1">(e.g. ABCDEFG...)</p>
     </div>
 {{!-- Numbers --}}
     <div class="d-flex mb-3">
       <label class="col-sm-4" for="numbers">Include Numbers</label>
-      <input type="checkbox" class="m-0 p-0" name="numbers">
-      <p class="m-0 ps-1">(e.g. 123456)</p>
+      <input type="checkbox" class="m-0 p-0" name="numbers" {{#if options.numbers}}checked{{/if}}>
+      <p class="m-0 ps-1">(e.g. 123456...)</p>
     </div>
 {{!-- Symbols --}}
     <div class="d-flex mb-3">
       <label class="col-sm-4" for="symbols">Include Symbols</label>
-      <input type="checkbox" class="m-0 p-0" name="symbols">
-      <p class="m-0 ps-1">(e.g. @#$%)</p>
+      <input type="checkbox" class="m-0 p-0" name="symbols" {{#if options.symbols}}checked{{/if}}>
+      <p class="m-0 ps-1">(e.g. !@#$%^&amp;*)</p>
     </div>
 {{!-- exclude-characters --}}
     <div class="d-flex mb-3">
       <label class="col-sm-4 form-label" for="exclude-characters">Exclude Characters</label>
       <div class="col-sm-8">
-      <input type="text" class="form-control m-0" name="exclude-characters" placeholder="1...">
-      <small class="m-0">These characters will not appear in the password</small>
+      <input type="text" class="form-control m-0" name="exclude-characters" placeholder="1..." value="{{options.exclude-characters}}">
+      <small class="m-0" style="color: gray;">These characters will not appear in the password</small>
       </div>
     </div>
 {{!-- password-output --}}
